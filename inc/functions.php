@@ -34,3 +34,15 @@ function get_genres(){
     $result = $query->fetchAll();
     return $result;
     }
+
+
+function edit_book(){
+    $connection = connect();
+    $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+    
+    $query = $connection->prepare("SELECT * FROM kirja WHERE kirja_id = $id");
+    $query->execute();
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $result = $query->fetchAll();
+    return $result;
+}
