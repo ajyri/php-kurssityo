@@ -2,6 +2,11 @@
 require_once('./inc/functions.php')
 ?>
 
+<<<<<<< HEAD
+=======
+<?php $result = edit_book() ?>
+
+>>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +23,20 @@ require_once('./inc/functions.php')
     <form action="save.php" method="POST">
         <div>
             <label for="">Nimi</label>
+<<<<<<< HEAD
             <input type="text" name="nimi" id="nimi">
+=======
+            <input type="text" name="nimi" id="nimi" value=<?php print $result['kirjanimi']?>>
+>>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
         </div>
 
         <div>
             <label for="">Kuvaus</label>
+<<<<<<< HEAD
             <textarea name="kuvaus" id="kuvaus" cols="30" rows="10"></textarea>
+=======
+            <textarea name="kuvaus" id="kuvaus" cols="30" rows="10"><?php print_r($result)?></textarea>
+>>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
         </div>
 
         <div>
