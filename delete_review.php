@@ -6,7 +6,7 @@ try{
     $connection = connect();
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
     $connection->beginTransaction();
-    $query = $connection->prepare("DELETE FROM arvostelu where arvostelu_ID = :id");
+    $query = $connection->prepare("DELETE FROM kirja where kirja_ID = :id");
     $query->bindValue(':id',$id,PDO::PARAM_INT);
     $query->execute();
     $connection->commit();

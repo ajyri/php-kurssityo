@@ -2,11 +2,8 @@
 require_once('./inc/functions.php')
 ?>
 
-<<<<<<< HEAD
-=======
 <?php $result = edit_book() ?>
 
->>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,33 +12,26 @@ require_once('./inc/functions.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Lisää kirja</h1>
-    <form action="save.php" method="POST">
+    <h1>Muokkaa kirjaa</h1>
+    <form action="update.php?id=<?=$result['kirja_ID']?>" method="POST">
         <div>
             <label for="">Nimi</label>
-<<<<<<< HEAD
-            <input type="text" name="nimi" id="nimi">
-=======
-            <input type="text" name="nimi" id="nimi" value=<?php print $result['kirjanimi']?>>
->>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
+            <input type="text" name="nimi" id="nimi" value='<?= $result['kirjanimi']?>'>
         </div>
 
         <div>
             <label for="">Kuvaus</label>
-<<<<<<< HEAD
-            <textarea name="kuvaus" id="kuvaus" cols="30" rows="10"></textarea>
-=======
-            <textarea name="kuvaus" id="kuvaus" cols="30" rows="10"><?php print_r($result)?></textarea>
->>>>>>> be703d6135e796c073b0788ab1ea56c3befbd6d1
+            <textarea name="kuvaus" id="kuvaus" cols="30" rows="10"><?= ($result['kuvaus'])?></textarea>
         </div>
 
         <div>
             <label for="">Hinta</label>
-            <input type="decimal" name="hinta" id="hinta">
+            <input type="decimal" name="hinta" id="hinta" value='<?= $result['hinta']?>'>
         </div>
 
         <div>
@@ -57,7 +47,7 @@ require_once('./inc/functions.php')
         </div>
 
         <div>
-            <button>Lisää</button>
+            <button>Tallenna muokkaus</button>
         </div>
     </form>
 </html>
